@@ -7,12 +7,18 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        monterate: ["Monterate", "sans-serif"], // Adjust the font name as needed
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        ".drop-shadow": {
+          filter: "drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.5))",
+        },
+      });
+    },
+  ],
 };
